@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suporte de TI - Cidade de Goiás</title>
+    <link rel="stylesheet" href="../src/css/fonts.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css" media="screen,projection" />
+
+    <link rel="stylesheet" href="../src/css/fonts.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <script src="../static/js/vue.js"></script>
+    <script>
+        Vue.config.devtools = true
+        Vue.config.productionTip = true
+        Vue.config.debug = true
+        Vue.config.silent = false
+    </script>
+
+</head>
+
+<body>
+    <div id="appVRender">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col s12 m12">
+                    <h5>
+                        {{ message }}
+                    </h5>
+                </div>
+
+            </div>
+            <div class="row collection">
+                <div style="min-height:200px" class="valign-wrapper col s12 m4">
+                    <span class="col s12 center-align">
+                    <i class="white-text">
+                        <img style="width: 100%;" src="../static/icons/suap.png" alt="">
+                    </i>
+                </span>
+                </div>
+                <div class="col s12 m8">
+                    <div class="card-content ">
+                        <h4 class="card-title">Chamado</h4>
+                        Para realizar solicitação de suporte ou serviço de TI, deverá ser aberto chamado no sistema SUAP.
+                    </div>
+                    <div class="card-action right-align">
+                        <br> <button v-on:click.prevent.stop="openUrl('https://suap.ifg.edu.br/centralservicos/abrir_chamado/192/')" class="btn green darken-2">Abrir chamado</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row collection">
+                <form @submit.prevent.stop>
+
+                    <div class="row">
+
+                        <div style="min-height:160px" class="valign-wrapper teal lighten-2 col s12 m4">
+                            <span class="col s12 center-align">
+                                <i class="white-text large material-icons">help_outline</i>
+                                
+                            </span>
+                        </div>
+                        <div class="col s12 m8">
+                            <div class="card-content">
+                                <h4 class="card-title"> Receber suporte
+                                    <i data-target='dropdown1' class="dropdown-trigger material-icons right">more_vert</i>
+                                    <small style="font-size: 10px;" class="grey-text right right-align">{{(servidor_enable.ip)?servidor_enable.ip:"Nenhum disponível )"}}:{{servidor_enable.port}}</small>
+                                </h4>
+                                <ul id='dropdown1' class='dropdown-content'>
+                                    <li v-for="{ip, port, status} in servidores_reachable" :key="ip+'-'+port">
+                                        <a v-on:click.prevent.stop="setServer({ip:ip,port:port})"><i class="material-icons">desktop_windows</i>{{ip}}:{{port}}</a>
+                                    </li>
+                                    <li class="divider" tabindex="-1"></li>
+                                    <li><a href="#!" v-on:click.prevent.stop="updateReachable"><i class="material-icons">refresh</i>Procurar</a></li>
+                                </ul>
+                                Para permitir que o técnico de TI acesse e controle este computador, clique no botão conectar.
+                            </div>
+                            <div class="card-action right-align">
+                                <br><button v-on:click="connect" class="btn waves-effect waves-light">Conectar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea v-model="description" id="descChamado" class="materialize-textarea validate" required></textarea>
+                            <label for="descChamado">Descreva o seu Chamado</label>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div v-show="apiSolution.length > 0" class="row">
+                    <div class="col s12">
+                        <ul class="collapsible">
+                            <li v-for="solution in apiSolution" :key="solution.body">
+                                <div class="collapsible-header"><i class="material-icons">help_outline</i>{{solution.title}}</div>
+                                <div class="collapsible-body">
+                                    <span v-html="solution.body"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="progress" class="hide progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+
+
+            <div class="row collection">
+                <div style="min-height:200px" class="valign-wrapper teal lighten-2 col s12 m4">
+                    <span class="col s12 center-align">
+                    <i class="white-text large material-icons">desktop_windows</i>
+
+                </span>
+                </div>
+                <div class="col s12 m8">
+                    <div class="card-content">
+                        <h4 class="card-title"> Conceder suporte</h4>
+                        Para se conectar a um computador remoto e acessá-lo, clique no botão conectar.
+                    </div>
+                    <div class="card-action right-align">
+
+
+                        <br><button v-on:click.prevent.stop="listener" class="btn waves-effect waves-light">Conectar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m8">
+                    <h6>Computador: {{system.hostname}}</h6>
+                    <h6>Versão: {{system.hostversion}}</h6>
+                    <h6>Redes: {{system.networks.toString()}}</h6>
+                </div>
+                <div class="col s12 m4 valign-wrapper">
+                    <button v-on:click.prevent.stop="close" class="col s12 btn red darken-1 right"><i class="material-icons left">close</i>Fechar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+    <script type="module" src="../src/index.js"></script>
+</body>
+
+</html>

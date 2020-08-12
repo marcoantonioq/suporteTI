@@ -1,0 +1,29 @@
+{
+    "productName": "SuporteTI",
+    "appId": "ifg.edu.suporteTI",
+    "artifactName": "${productName}-setup-${version}.${ext}",
+    "directories": {
+        "output": "builds/",
+        "buildResources": "resources"
+    },
+    "extraResources": [],
+    "files": [
+        "app/**/*",
+        "index.js",
+        "node_modules/**/*",
+        "package.json"
+    ],
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+        "icon": "app/render/static/icon.ico"
+    },
+    "win": {
+        "icon": "app/render/static/icon.ico"
+    },
+    "linux": {
+        "icon": "app/render/static/icon.png"
+    }
+}

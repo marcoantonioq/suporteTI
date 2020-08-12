@@ -1,0 +1,20 @@
+{
+    "name": "VNC-IFG",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/electron .",
+        "build": "./node_modules/.bin/electron-builder -w",
+        "bwin": "./node_modules/.bin/electron-builder -w --win portable"
+    },
+    "author": "Marco Antônio Queiroz",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^9.1.2",
+        "electron-builder": "^22.8.0"
+    },
+    "dependencies": {
+        "ip": "^1.1.5"
+    }
+}

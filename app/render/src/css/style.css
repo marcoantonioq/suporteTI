@@ -1,0 +1,21 @@
+body {
+    background-color: #FFF;
+    user-select: none;
+}
+
+.btn-suap {
+    background-color: #5cb85c;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.btn-suap:hover {
+    opacity: 1;
+    background-color: #5cb85c;
+}
+
+.dropdown-content {
+    min-width: 250px;
+}
