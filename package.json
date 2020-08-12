@@ -1,7 +1,7 @@
 {
     "name": "VNC-IFG",
     "version": "1.0.0",
-    "description": "",
+    "description": "Suporte de TI: Campus Cidade de Goiás",
     "main": "index.js",
     "scripts": {
         "start": "./node_modules/.bin/electron .",
