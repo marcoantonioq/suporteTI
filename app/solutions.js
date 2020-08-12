@@ -14,18 +14,6 @@ const solutions = JSON.stringify([{
     "script": "script.bat"
 }, {
     "key": "impressora",
-    "title": "Instalação de tonner",
-    "tag": ["impressora", "toner"],
-    "body": `
-        1 - Confira o modelo da impressora e certifique-se de que possua toner para reposição.<br>
-        1.1 - Antes mesmo de efetuar a troca, você pode tentar prolongar a vida útil do toner em uso retirando-o da impressora e o sacudindo (agitando).<br>
-        1.2 - Caso o passo anterior não tenha surtido efeito, e você possua toner para reposição, pegue o mesmo e verifique as indicações de instalação que geralmente se encontram inscritas na caixa.<br>
-        1.3 - Se não possuir toner para reposição, contate a empresa responsável pela prestação de serviços de reprografia e peça por toner para reposição conforme o modelo da impressora. Considere pedir ao menos uma unidade excedente para emergências.<br>
-        2 - Conforme inscrições na caixa do toner novo, remova o toner vazio e o substitua pelo cheio.<br>
-        3 - Aguarde pelo reconhecimento do toner novo pela impressora e, se necessário, efetue uma impressão de teste.`,
-    "script": "script.bat"
-}, {
-    "key": "impressora",
     "title": "Instalar uma impressora",
     "tag": ["impressora", "instala"],
     "body": `

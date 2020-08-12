@@ -30,11 +30,8 @@ function createWindow() {
         win.show()
     })
 
-
     win.setMenu(null)
         // win.webContents.openDevTools()
-
-    // e carregar o index.html do aplicativo.
     win.loadFile('./app/render/html/index.html')
 
 }

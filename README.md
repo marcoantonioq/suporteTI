@@ -1,13 +1,13 @@
-# suporteTI
+# Suporte de TI: Cidade de Goiás
+
 Aplicativo de acesso remoto. 
 
+# Etapas do desenvolvimento 
 
-# Etapas
-
-- [x] Receber suporte
-- [x] Conceder suporte
-- [ ] API: Pesquisa de soluções apartir da descrição
-- [ ] Shell: Automação de tarefas apartir das soluções
+- [x] Receber suporte;
+- [x] Conceder suporte;
+- [ ] API: Pesquisa de soluções a partir da descrição informada;
+- [ ] Shell: Automação de tarefas/soluções;
 
 
 # PrintSC

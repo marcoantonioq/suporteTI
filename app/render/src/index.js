@@ -10,7 +10,7 @@ var appVRender = new Vue({
     el: '#appVRender',
     data() {
         return {
-            message: `Seja bem vindo ${infoSystem.username}! `,
+            message: `Olá ${infoSystem.username}! `,
             description: '',
             system: infoSystem,
             servidor_enable: { ip: null, port: null },
@@ -25,10 +25,13 @@ var appVRender = new Vue({
         },
         hide: (el) => el.classList.add("hide"),
         show: (el) => el.classList.remove("hide"),
-        connect: function(event) {
+        connect: async function(event) {
             if (!this.servidor_enable.ip) {
-                M.toast({ html: ':( Nenhum computador encontrado! Tente novamente' })
-                this.updateReachable()
+                M.toast({ html: ':( Nenhum computador encontrado!' })
+                this.updateReachable().then(data => {
+                    M.toast({ html: ':) Tente novamente!!!' })
+                        // this.connect()
+                })
             } else {
                 if (this.description) {
                     let progress = document.querySelector("#progress")
@@ -93,7 +96,9 @@ var appVRender = new Vue({
     },
     watch: {},
     created: function() {
+        M.toast({ html: this.message })
         this.updateReachable()
+
     }
 })
 
@@ -105,5 +110,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         var elems = document.querySelectorAll('.collapsible');
         var instances = M.Collapsible.init(elems, options);
+
+        var elems = document.querySelectorAll('.tabs');
+        var instance = M.Tabs.init(elems, options);
     })();
 });

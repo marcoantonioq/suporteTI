@@ -1,7 +1,7 @@
 {
     "productName": "SuporteTI",
     "appId": "ifg.edu.suporteTI",
-    "artifactName": "${productName}-setup-${version}.${ext}",
+    "artifactName": "${productName}-instalador.${ext}",
     "directories": {
         "output": "builds/",
         "buildResources": "resources"

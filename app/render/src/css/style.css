@@ -19,3 +19,19 @@ body {
 .dropdown-content {
     min-width: 250px;
 }
+
+.tabs .tab a,
+.tabs .tab a:hover,
+.tabs .tab a.active {
+    background-color: transparent;
+    color: #00510f;
+}
+
+.tabs .indicator {
+    background-color: #00510f;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: transparent
+}
