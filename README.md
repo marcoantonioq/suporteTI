@@ -1,6 +1,9 @@
 # Suporte de TI: Cidade de Goiás
 
-Aplicativo de acesso remoto. 
+Aplicativo de gerenciamento de acesso remoto. 
+
+## Aplicação:
+Sua principal funcionalidade é fornecer interatividade entre os usuários e o serviço UltraVNC.
 
 # Etapas do desenvolvimento 
 
