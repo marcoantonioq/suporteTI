@@ -1,8 +1,11 @@
 'use strict';
 const ip = require('ip');
 const os = require('os');
-const { setServers } = require('dns');
 
+
+/**
+ * Informações IPv4 do SO
+ */
 var redes = Object.values(os.networkInterfaces())
     .map(
         (board) => board
@@ -21,6 +24,9 @@ var servers = redes.map(net => {
     }
 });
 
+/**
+ * Coleta informações do sistema operacional
+ */
 const infoSystem = {
     username: os.userInfo().username.toUpperCase(),
     hostname: os.hostname(),

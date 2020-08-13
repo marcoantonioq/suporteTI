@@ -6,6 +6,9 @@ const { listenerVNC, connectVNC } = require("../module/VNC");
 const { isReachable, ipV4Range } = require("../module/Net");
 
 
+/**
+ * Objeto app VueJS
+ */
 var appVRender = new Vue({
     el: '#appVRender',
     data() {
@@ -38,6 +41,8 @@ var appVRender = new Vue({
                     this.show(progress)
                     connectVNC(event, this.servidor_enable, this.description)
                         .then(data => this.hide(progress))
+                } else {
+                    M.toast({ html: 'Por favor, informe uma descrição!!!' })
                 }
             }
         },

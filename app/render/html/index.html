@@ -37,78 +37,79 @@
                     <li class="tab col s3"><a href="#tab2">Técnico de TI</a></li>
                 </ul>
                 <div id="tab1" class="col s12">
-                    <div class="row collection">
+                    <form @submit.prevent.stop>
+                        <div class="row collection">
 
-                        <div style="min-height:200px" class="valign-wrapper col s12 m4">
-                            <span class="col s12 center-align">
+                            <div style="min-height:200px" class="valign-wrapper col s12 m4">
+                                <span class="col s12 center-align">
                                 <i class="white-text">
                                     <img style="width: 100%;" src="../static/icons/suap.png" alt="">
                                 </i>
                             </span>
-                        </div>
-
-                        <div class="col s12 m8">
-                            <div class="card-content ">
-                                <h4 class="card-title">Chamado</h4>
-                                Para realizar solicitação de suporte ou serviço de TI, deverá ser aberto chamado no sistema SUAP.
                             </div>
-                            <div class="card-action right-align">
-                                <br> <button v-on:click.prevent.stop="openUrl('https://suap.ifg.edu.br/centralservicos/abrir_chamado/192/')" class="btn green darken-2">Abrir chamado</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row collection">
-
-
-                        <div style="min-height:160px" class="valign-wrapper teal lighten-2 col s12 m4">
-                            <span class="col s12 center-align">
-                                <i class="white-text large material-icons">help_outline</i>
-                            </span>
-                        </div>
-
-                        <div class="col s12 m8">
-                            <div class="card-content ">
-                                <h4 class="card-title"> Receber suporte
-                                    <i data-target='dropdown1' class="dropdown-trigger material-icons right">more_vert</i>
-                                    <small style="font-size: 10px;" class="grey-text right right-align">{{(servidor_enable.ip)?servidor_enable.ip:"Nenhum disponível )"}}:{{servidor_enable.port}}</small>
-                                </h4>
-                                <ul id='dropdown1' class='dropdown-content'>
-                                    <li v-for="{ip, port, status} in servidores_reachable" :key="ip+'-'+port">
-                                        <a v-on:click.prevent.stop="setServer({ip:ip,port:port})"><i class="material-icons">desktop_windows</i>{{ip}}:{{port}}</a>
-                                    </li>
-                                    <li class="divider" tabindex="-1"></li>
-                                    <li><a href="#!" v-on:click.prevent.stop="updateReachable"><i class="material-icons">refresh</i>Procurar</a></li>
-                                </ul>
-                                Para permitir que o técnico de TI acesse e controle este computador, clique no botão conectar.
-                                <div class="card-metrics input-field col s12">
-                                    <textarea v-model="description" id="descChamado" class="materialize-textarea validate" required></textarea>
-                                    <label for="descChamado">Descreva o seu Chamado</label>
+                            <div class="col s12 m8">
+                                <div class="card-content ">
+                                    <h4 class="card-title">Chamado</h4>
+                                    Para realizar solicitação de suporte ou serviço de TI, deverá ser aberto chamado no sistema SUAP.
+                                </div>
+                                <div class="card-action right-align">
+                                    <br> <button v-on:click.prevent.stop="openUrl('https://suap.ifg.edu.br/centralservicos/abrir_chamado/192/')" class="btn green darken-2">Abrir chamado</button>
                                 </div>
                             </div>
-                            <div class="card-action right-align">
-                                <button v-on:click="connect" class="btn ">Conectar</button>
+                        </div>
+
+                        <div class="row collection">
+
+
+                            <div style="min-height:160px" class="valign-wrapper teal lighten-2 col s12 m4">
+                                <span class="col s12 center-align">
+                                <i class="white-text large material-icons">help_outline</i>
+                            </span>
                             </div>
-                            <br>
-                        </div>
-                    </div>
 
-                    <div v-show="apiSolution.length > 0" class="row">
-                        <div class="col s12">
-                            <ul class="collapsible">
-                                <li v-for="solution in apiSolution" :key="solution.body">
-                                    <div class="collapsible-header">
-                                        <i class="material-icons">help_outline</i>{{solution.title}}
+                            <div class="col s12 m8">
+                                <div class="card-content ">
+                                    <h4 class="card-title"> Receber suporte
+                                        <i data-target='dropdown1' class="dropdown-trigger material-icons right">more_vert</i>
+                                        <small style="font-size: 10px;" class="grey-text right right-align">{{(servidor_enable.ip)?servidor_enable.ip:"Nenhum disponível )"}}:{{servidor_enable.port}}</small>
+                                    </h4>
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                        <li v-for="{ip, port, status} in servidores_reachable" :key="ip+'-'+port">
+                                            <a v-on:click.prevent.stop="setServer({ip:ip,port:port})"><i class="material-icons">desktop_windows</i>{{ip}}:{{port}}</a>
+                                        </li>
+                                        <li class="divider" tabindex="-1"></li>
+                                        <li><a href="#!" v-on:click.prevent.stop="updateReachable"><i class="material-icons">refresh</i>Procurar</a></li>
+                                    </ul>
+                                    Para permitir que o técnico de TI acesse e controle este computador, clique no botão conectar.
+                                    <div class="card-metrics input-field col s12">
+                                        <textarea v-model="description" id="descChamado" class="materialize-textarea validate" required></textarea>
+                                        <label for="descChamado">Descreva o seu Chamado</label>
                                     </div>
-                                    <div class="collapsible-body">
-                                        <span v-html="solution.body"></span>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="card-action right-align">
+                                    <button v-on:click="connect" class="btn ">Conectar</button>
+                                </div>
+                                <br>
+                            </div>
                         </div>
 
-                    </div>
+                        <div v-show="apiSolution.length > 0" class="row">
+                            <div class="col s12">
+                                <ul class="collapsible">
+                                    <li v-for="solution in apiSolution" :key="solution.body">
+                                        <div class="collapsible-header">
+                                            <i class="material-icons">help_outline</i>{{solution.title}}
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <span v-html="solution.body"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
+                        </div>
+                    </form>
                 </div>
 
                 <div id="tab2" class="col s12">
