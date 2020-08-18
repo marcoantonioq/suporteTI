@@ -83,7 +83,7 @@
                                     </ul>
                                     Para permitir que o técnico de TI acesse e controle este computador, clique no botão conectar.
                                     <div class="card-metrics input-field col s12">
-                                        <textarea v-model="description" id="descChamado" class="materialize-textarea validate" required></textarea>
+                                        <textarea @focus="updateReachable()" v-model="description" id="descChamado" class="materialize-textarea validate" required></textarea>
                                         <label for="descChamado">Descreva o seu Chamado</label>
                                     </div>
                                 </div>

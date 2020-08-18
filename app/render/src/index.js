@@ -102,13 +102,14 @@ var appVRender = new Vue({
     watch: {},
     created: function() {
         M.toast({ html: this.message })
-        this.updateReachable()
+            // this.updateReachable()
 
     }
 })
 
 document.addEventListener("DOMContentLoaded", function(event) {
     (async() => {
+
         let options = {}
         var elems = document.querySelectorAll('.dropdown-trigger');
         var instances = M.Dropdown.init(elems, {});

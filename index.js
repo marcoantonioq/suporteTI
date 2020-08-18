@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
-app.setAppUserModelId('ifg.edu.suporteTI')
+app.setAppUserModelId('br.edu.ifg.suporteTI')
 
 function createWindow() {
 
