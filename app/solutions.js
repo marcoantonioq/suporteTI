@@ -32,7 +32,29 @@ const findInObject = (obj, query) => obj.filter(function(obj) {
     });
 });
 
-const getSolutions = (tagDesc) => findInObject(JSON.parse(solutions), { tag: tagDesc })
+const getSolutions = (desc) => {
+
+    let contentValue = (str, value) => {
+        str = str.toLocaleLowerCase()
+        value = value.toLocaleLowerCase()
+        return str.indexOf(value) >= 0
+    }
+
+    return JSON
+        .parse(solutions)
+        .map(solution => {
+            let res = solution.tag.reduce((prev, current) => {
+                prev[contentValue(desc, current)] += 1
+                return prev
+            }, { true: 0, false: 0 })
+            solution.relevancia = res.true - res.false
+            return solution
+        })
+        .filter(solution => {
+            console.log(solution.relevancia)
+            return solution.relevancia >= 0
+        })
+}
 
 module.exports = {
     getSolutions
