@@ -31,7 +31,7 @@ function createWindow() {
     })
 
     win.setMenu(null)
-        // win.webContents.openDevTools()
+    win.webContents.openDevTools()
     win.loadFile('./app/render/html/index.html')
 
 }

@@ -1,6 +1,8 @@
 'use strict';;
 const net = require('net');
 const ip = require("ip");
+const { networks } = require("../module/System");
+const { isString } = require('util');
 
 /**
  * Função que verifica se porta no host está ativa
@@ -30,9 +32,9 @@ const isReachable = async({ timeout = 2000, ip, port } = {}) => {
 
     try {
         await promise;
-        return true;
+        return { ip: ip, port: port, status: true };
     } catch (_) {
-        return false;
+        return { ip: ip, port: port, status: false };
     }
 };
 
@@ -43,18 +45,38 @@ const isReachable = async({ timeout = 2000, ip, port } = {}) => {
  */
 const ipV4Range = (cidrIp) => {
     let subnet = ip.cidrSubnet(cidrIp); // DeprecarionWarning 
+    let maskSubNet = subnet.subnetMaskLength
 
     subnet["ips"] = [];
-    let firstAddressLong = ip.toLong(subnet.firstAddress);
-    const lastAddressLong = ip.toLong(subnet.lastAddress);
+    if (maskSubNet > 23 && maskSubNet <= 32) { // calcula subRede entre 23 e 32
+        let firstAddressLong = ip.toLong(subnet.firstAddress);
+        const lastAddressLong = ip.toLong(subnet.lastAddress);
 
-    for (firstAddressLong; firstAddressLong <= lastAddressLong; firstAddressLong++)
-        subnet["ips"].push(ip.fromLong(firstAddressLong));
+        for (firstAddressLong; firstAddressLong <= lastAddressLong; firstAddressLong++)
+            subnet["ips"].push(ip.fromLong(firstAddressLong));
+    }
 
     return subnet;
 }
 
+const hostsActives = async(servers = networks) => {
+    isString(servers) &&
+        (servers = [{ network: servers, ports: [5901] }])
+
+    let ips = []
+    servers.forEach(server => {
+        ipV4Range(server.network)
+            .ips.forEach(ip => {
+                server.ports.forEach(port => {
+                    ips.push({ ip: ip, port: port, status: false })
+                })
+            })
+    })
+    return (await Promise.all(
+        ips.map(isReachable)
+    )).filter(hosts => hosts.status === true)
+}
+
 module.exports = {
-    ipV4Range,
-    isReachable
+    hostsActives
 }

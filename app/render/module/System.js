@@ -17,7 +17,7 @@ var redes = Object.values(os.networkInterfaces())
     )
     .filter(net => net.length > 0)
 
-var servers = redes.map(net => {
+var networks = redes.map(net => {
     return {
         "network": net[0]['cidr'],
         "ports": ["5901"]
@@ -36,5 +36,5 @@ const infoSystem = {
 
 module.exports = {
     infoSystem,
-    servers,
+    networks,
 }
