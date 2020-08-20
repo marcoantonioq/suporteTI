@@ -21,7 +21,8 @@
         "icon": "app/render/static/icon.ico"
     },
     "win": {
-        "icon": "app/render/static/icon.ico"
+        "icon": "app/render/static/icon.ico",
+        "requestedExecutionLevel": "highestAvailable"
     },
     "linux": {
         "icon": "app/render/static/icon.png"

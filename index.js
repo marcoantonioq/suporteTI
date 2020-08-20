@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
-app.setAppUserModelId('br.edu.ifg.suporteTI')
+// app.setAppUserModelId('br.edu.ifg.suporteTI')
 
 function createWindow() {
 
@@ -31,7 +31,7 @@ function createWindow() {
     })
 
     win.setMenu(null)
-    win.webContents.openDevTools()
+        // win.webContents.openDevTools()
     win.loadFile('./app/render/html/index.html')
 
 }

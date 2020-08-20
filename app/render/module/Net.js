@@ -59,6 +59,10 @@ const ipV4Range = (cidrIp) => {
     return subnet;
 }
 
+/**
+ * Retorno lista de servidores disponíveis na rede local ou remotamente
+ * @param {object} servers obj{network:CIDR,ports:[]}
+ */
 const hostsActives = async(servers = networks) => {
     isString(servers) &&
         (servers = [{ network: servers, ports: [5901] }])
