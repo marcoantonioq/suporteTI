@@ -53,7 +53,7 @@ var appVRender = new Vue({
         updateReachable: async function() {
 
             let servidores = await Promise.all([
-                hostsActives(), // net local
+                // hostsActives(), // net local
                 hostsActives(settings.servers)
             ])
 

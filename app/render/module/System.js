@@ -7,20 +7,17 @@ const os = require('os');
  * Informações IPv4 do SO
  */
 var redes = Object.values(os.networkInterfaces())
-    .map(
-        (board) => board
-        .filter(
-            net => net.family == "IPv4" &&
-            ip.isPrivate(net.address) &&
-            !net.cidr.includes('127.0.0')
-        )
-    )
+    .map(board => board.filter(
+        net => net.family == "IPv4" &&
+        ip.isPrivate(net.address) &&
+        !net.cidr.includes('127.0.0')
+    ))
     .filter(net => net.length > 0)
 
 var networks = redes.map(net => {
     return {
         "network": net[0]['cidr'],
-        "ports": ["5901"]
+        "ports": ["9001"]
     }
 });
 

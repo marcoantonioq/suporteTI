@@ -1,17 +1,16 @@
 const { app, BrowserWindow } = require('electron')
 
-// app.setAppUserModelId('br.edu.ifg.suporteTI')
+app.setAppUserModelId('suporteTI')
 
 function createWindow() {
 
-    // Cria uma janela de navegação.
     let win = new BrowserWindow({
         icon: __dirname + "/app/render/static/icon.png",
         transparent: false,
         backgroundColor: '#2e2c29',
         frame: true,
         width: 800,
-        height: 600,
+        height: 700,
         webPreferences: {
             nodeIntegration: true
         },

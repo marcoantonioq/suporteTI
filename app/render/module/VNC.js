@@ -51,10 +51,10 @@ const listenerVNC = async(event) => {
     console.log("Vamos executar o view")
     const process = await VNC(
         "\\app\\exec\\vncviewer.exe", [
-            '-listen', '5901',
-            '-enablecache',
-            '-disablesponsor',
-            '-nostatus'
+            '-listen', '9001',
+            // '-enablecache',
+            // '-disablesponsor',
+            // '-nostatus'
         ], notification, event
     )
     return false

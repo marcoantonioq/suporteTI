@@ -65,7 +65,7 @@ const ipV4Range = (cidrIp) => {
  */
 const hostsActives = async(servers = networks) => {
     isString(servers) &&
-        (servers = [{ network: servers, ports: [5901] }])
+        (servers = [{ network: servers, ports: [9001] }])
 
     let ips = []
     servers.forEach(server => {

@@ -1,7 +1,7 @@
 {
-    "name": "br.edu.ifg.suporteTI",
+    "name": "suporteTI",
     "version": "1.0.0",
-    "description": "Suporte de TI: Campus Cidade de Goiás",
+    "description": "Suporte de TI: Cidade de Goiás",
     "main": "index.js",
     "scripts": {
         "start": "./node_modules/.bin/electron .",
