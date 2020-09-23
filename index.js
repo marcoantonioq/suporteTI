@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
 
-autoUpdater.autoDownload = true
+// autoUpdater.autoDownload = true
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
@@ -43,8 +43,8 @@ function createWindow() {
 
     win.once("ready-to-show", () => {
         win.show()
-            // sendStatusToWindow('Now: checkForUpdatesAndNotify');
-            // autoUpdater.checkForUpdatesAndNotify();
+        sendStatusToWindow('Now: checkForUpdatesAndNotify');
+        autoUpdater.checkForUpdatesAndNotify();
     })
 
     win.setMenu(null)
