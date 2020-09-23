@@ -50,7 +50,14 @@ var appVRender = new Vue({
         /**
          * Atualiza a lista de hosts ativos
          */
-        updateReachable: async function() {
+        updateReachable: async function(ev) {
+
+            let isUpdateServers = (ev === 'update' && this.servidores_reachable.length > 0)
+
+            if (isUpdateServers) {
+                console.log('Lista de servidores não atualizada!!!')
+                return false
+            }
 
             let servidores = await Promise.all([
                 // hostsActives(), // net local
@@ -68,6 +75,8 @@ var appVRender = new Vue({
             this.servidores_reachable.length > 0 &&
                 M.toast({ html: `${this.servidores_reachable.length} computador pronto para iniciar o suporte! ` }) ||
                 M.toast({ html: `Nenhum computador para iniciar o suporte! ` })
+
+            console.log(this.servidores_reachable)
         },
         close: function(event) {
             remote.BrowserWindow.getFocusedWindow().close()
