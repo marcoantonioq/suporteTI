@@ -2,6 +2,7 @@ electron-builder.yml
 
 .env
 /builds/
+/dist/
 /node_modules/
 
 # Logs
