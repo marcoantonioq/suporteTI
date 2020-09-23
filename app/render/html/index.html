@@ -145,19 +145,14 @@
 
             </div>
 
-
-            <div id="notification" class="hidden">
-                <p id="message"></p>
-                <button id="close-button" onClick="closeNotification()"> Close </button>
-                <button id="restart-button" onClick="restartApp()" class="hidden"> Restart </button>
-            </div>
-
             <div class="row">
                 <div class="col s12 m4 valign-wrapper">
                     <button v-on:click.prevent.stop="close" class="col s12 btn red darken-1 right"><i class="material-icons left">close</i>Fechar</button>
                 </div>
+                <div class="notification hhidden col s12 m4">
+                    <button v-on:click.prevent.stop="restartApp" class="col s12 btn darken-1 right"><i class="material-icons left">sync</i>Instalar atualização</button>
+                </div>
             </div>
-
 
         </div>
     </div>

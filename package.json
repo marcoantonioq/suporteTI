@@ -1,6 +1,6 @@
 {
     "name": "suporteTI",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Suporte de TI: Cidade de Goiás",
     "main": "index.js",
     "repository": {
@@ -20,6 +20,7 @@
         "electron-builder": "^22.8.1"
     },
     "dependencies": {
+        "electron-log": "^4.2.4",
         "electron-updater": "^4.3.5",
         "ip": "^1.1.5"
     }

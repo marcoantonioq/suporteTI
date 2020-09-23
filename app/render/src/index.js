@@ -78,6 +78,9 @@ var appVRender = new Vue({
 
             console.log(this.servidores_reachable)
         },
+        restartApp: function(event) {
+            ipcRenderer.send('restart_app');
+        },
         close: function(event) {
             remote.BrowserWindow.getFocusedWindow().close()
         }
@@ -107,35 +110,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var instance = M.Tabs.init(elems, options);
 
 
-        ipcRenderer.send('app_version');
-        ipcRenderer.on('app_version', (event, arg) => {
-            ipcRenderer.removeAllListeners('app_version');
-            const version = document.getElementById('version');
-            version.innerText = 'Suporte de TI: ' + arg.version;
-        });
+        document.getElementById('version').innerText = 'Suporte de TI: ' + remote.app.getVersion();
 
         const notification = document.getElementById('notification');
-        const message = document.getElementById('message');
-        const restartButton = document.getElementById('restart-button');
+        ipcRenderer.on('message', (event, arg) => {
+            M.toast({ html: arg })
+        });
+
         ipcRenderer.on('update_available', () => {
             ipcRenderer.removeAllListeners('update_available');
-            message.innerText = 'Uma nova atualização está disponível. Baixando agora ...';
+            M.toast({ html: 'Uma nova atualização está disponível. Baixando agora ...' })
             notification.classList.remove('hidden');
         });
         ipcRenderer.on('update_downloaded', () => {
             ipcRenderer.removeAllListeners('update_downloaded');
-            message.innerText = 'Atualização baixada. Ele será instalado na reinicialização. Reinicie agora?';
-            restartButton.classList.remove('hidden');
+            M.toast({ html: 'Atualização baixada. Ele será instalado na reinicialização. Reinicie agora?' })
             notification.classList.remove('hidden');
         });
-
-        function closeNotification() {
-            notification.classList.add('hidden');
-        }
-
-        function restartApp() {
-            ipcRenderer.send('restart_app');
-        }
-
     })();
 });
