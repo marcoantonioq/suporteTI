@@ -10,7 +10,8 @@
     "scripts": {
         "start": "./node_modules/.bin/electron .",
         "build": "./node_modules/.bin/electron-builder -w",
-        "bwin": "./node_modules/.bin/electron-builder -w --win portable"
+        "bwin": "./node_modules/.bin/electron-builder -w --win portable",
+        "deploy": "./node_modules/.bin/electron-builder -w --publish always"
     },
     "author": "Marco Antônio Queiroz",
     "license": "ISC",
