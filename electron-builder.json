@@ -21,7 +21,10 @@
         "icon": "app/render/static/icon.ico"
     },
     "win": {
-        "icon": "app/render/static/icon.ico"
+        "icon": "app/render/static/icon.ico",
+        "publish": {
+            "provider": "github"
+        }
     },
     "linux": {
         "icon": "app/render/static/icon.png"

@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const { autoUpdater } = require('electron-updater');
 
 app.setAppUserModelId('suporteTI')
 
@@ -30,7 +31,7 @@ function createWindow() {
     })
 
     win.setMenu(null)
-    win.webContents.openDevTools()
+        // win.webContents.openDevTools()
     win.loadFile('./app/render/html/index.html')
 
 }
