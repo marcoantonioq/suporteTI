@@ -1,3 +1,5 @@
+electron-builder.yml
+
 .env
 /builds/
 /node_modules/

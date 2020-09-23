@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "Suporte de TI: Cidade de Goiás",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marcoantonioq/suporteTI.git"
+    },
     "scripts": {
         "start": "./node_modules/.bin/electron .",
         "build": "./node_modules/.bin/electron-builder -w",
@@ -11,10 +15,11 @@
     "author": "Marco Antônio Queiroz",
     "license": "ISC",
     "devDependencies": {
-        "electron": "^9.1.2",
-        "electron-builder": "^22.8.0"
+        "electron": "^9.3.1",
+        "electron-builder": "^22.8.1"
     },
     "dependencies": {
+        "electron-updater": "^4.3.5",
         "ip": "^1.1.5"
     }
 }

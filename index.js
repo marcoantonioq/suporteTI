@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 app.setAppUserModelId('suporteTI')
 
@@ -30,9 +30,24 @@ function createWindow() {
     })
 
     win.setMenu(null)
-        // win.webContents.openDevTools()
+    win.webContents.openDevTools()
     win.loadFile('./app/render/html/index.html')
 
 }
 
 app.whenReady().then(createWindow)
+
+ipcMain.on('app_version', (event) => {
+    event.sender.send('app_version', { version: app.getVersion() });
+});
+
+autoUpdater.on('update-available', () => {
+    mainWindow.webContents.send('update_available');
+});
+autoUpdater.on('update-downloaded', () => {
+    mainWindow.webContents.send('update_downloaded');
+});
+
+ipcMain.on('restart_app', () => {
+    autoUpdater.quitAndInstall();
+});

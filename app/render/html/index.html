@@ -134,17 +134,23 @@
 
                     <div class="row">
                         <div class="col s12 m8">
-                            <h6>Computador: {{system.hostname}}</h6>
-                            <h6>Versão: {{system.hostversion}}</h6>
+                            <h6 id="version"> </h6>
+                            <h6>Computador: {{system.hostname}} / {{system.hostversion}}</h6>
                             <h6>Redes: {{system.networks.toString()}}</h6>
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
 
 
+            <div id="notification" class="hidden">
+                <p id="message"></p>
+                <button id="close-button" onClick="closeNotification()"> Close </button>
+                <button id="restart-button" onClick="restartApp()" class="hidden"> Restart </button>
+            </div>
 
             <div class="row">
                 <div class="col s12 m4 valign-wrapper">

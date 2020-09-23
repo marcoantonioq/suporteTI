@@ -1,4 +1,4 @@
-const { remote, shell } = require('electron');
+const { remote, shell, ipcRenderer } = require('electron');
 const settings = require("../../settings.json");
 const { getSolutions } = require("../../solutions.js");
 const { infoSystem } = require("../module/System");
@@ -105,5 +105,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         var elems = document.querySelectorAll('.tabs');
         var instance = M.Tabs.init(elems, options);
+
+
+        ipcRenderer.send('app_version');
+        ipcRenderer.on('app_version', (event, arg) => {
+            ipcRenderer.removeAllListeners('app_version');
+            const version = document.getElementById('version');
+            version.innerText = 'Suporte de TI: ' + arg.version;
+        });
+
+        const notification = document.getElementById('notification');
+        const message = document.getElementById('message');
+        const restartButton = document.getElementById('restart-button');
+        ipcRenderer.on('update_available', () => {
+            ipcRenderer.removeAllListeners('update_available');
+            message.innerText = 'Uma nova atualização está disponível. Baixando agora ...';
+            notification.classList.remove('hidden');
+        });
+        ipcRenderer.on('update_downloaded', () => {
+            ipcRenderer.removeAllListeners('update_downloaded');
+            message.innerText = 'Atualização baixada. Ele será instalado na reinicialização. Reinicie agora?';
+            restartButton.classList.remove('hidden');
+            notification.classList.remove('hidden');
+        });
+
+        function closeNotification() {
+            notification.classList.add('hidden');
+        }
+
+        function restartApp() {
+            ipcRenderer.send('restart_app');
+        }
+
     })();
 });
