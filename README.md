@@ -15,4 +15,4 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 
 # PrintSC
 
-![image](https://www.dropbox.com/s/x6qt42iwvzs5482/SuporteTI.png?dl=0)
+![image](https://dl.dropboxusercontent.com/s/x6qt42iwvzs5482/SuporteTI.png?dl=0)
