@@ -21,4 +21,4 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 
 [![Demo](https://dl.dropboxusercontent.com/s/b80v0yn950ktp4v/VideoSuporteTI.png?dl=0)](https://youtu.be/UCedJ5JMV1Y)
 
-[Apresentação: ](https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing)
+[Apresentação: https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing](https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing) 
