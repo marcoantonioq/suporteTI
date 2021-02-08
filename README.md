@@ -12,6 +12,8 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 - [ ] API: Pesquisa de soluções a partir da descrição informada;
 - [ ] Shell: Automação de tarefas/soluções;
 
+# Doc
+[Apresentação: https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo](https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing) 
 
 # PrintSC
 
@@ -21,4 +23,3 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 
 [![Demo](https://dl.dropboxusercontent.com/s/b80v0yn950ktp4v/VideoSuporteTI.png?dl=0)](https://youtu.be/UCedJ5JMV1Y)
 
-[Apresentação: https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing](https://docs.google.com/presentation/d/1icZQek_mK4ZdO2ldbJjZHEziXxiqo_UE6KdRbbxRlBo/edit?usp=sharing) 
