@@ -1,0 +1,154 @@
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFF;
+    --background: #F2F3F5;
+    --gray-line: #DCDDE0;
+    --text: #141414;
+    --text-highlight: #000000;
+    --text-discreet: #919191;
+    --title: #2E384D;
+    --red: #E83F5B;
+    --green: #2a862e;
+    --blue: #1E88E5;
+    --blue-dark: #4953B8;
+    --collection: #666666;
+    --border: #e0e0e0;
+}
+
+
+@media(max-width: 720px){
+    html {
+        font-size: 95%;
+    }
+    body {
+        padding: 0 1rem;
+    }
+    .collection {
+        flex-wrap: wrap;
+    }
+    .collection div {
+        width: 100%;
+    }
+}
+
+body {
+    font-family: 'Cantarell', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-width: 300px;
+}
+
+body, input, textarea, button {
+}
+
+
+
+i.large {
+    font-size: 6rem;
+    color: var(--white)
+}
+
+p {
+    margin: 0.9rem 0;
+}
+
+input, textarea {
+    background-color: transparent;
+    border-bottom: 1px solid var(--text);
+    border-radius: 0;
+    font-size: 16px;
+    height: 3rem;
+    margin: 0 0 8px 0;
+    outline: none;
+    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+    width: 100%;
+}
+
+textarea { 
+    overflow: auto;
+    line-height: normal;
+    overflow-y: hidden;
+    padding: .8rem 0 .8rem 0;
+    min-height: 3rem;
+}
+
+h4 {
+    font-size: 2.28rem;
+    line-height: 110%;
+    font-weight: 500;
+    margin: 1.52rem 0 .912rem 0;
+}
+
+::placeholder {
+    color:var(--text-discreet);
+    font-size:medium;
+}
+
+.container {
+    margin: 3rem auto;
+    /* height: 100vh; */
+    max-width: 700px;
+}
+
+.collection {
+    display: flex;
+    min-height: 14rem;
+    margin: 0.4rem 0 3rem;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+}
+.collection > div {
+    align-self: stretch;
+    padding: 1rem;
+}
+.collection div:first-child {
+    align-items:center;
+    justify-content: center;
+    background-color:var(--collection);
+    display: flex;
+    min-width: 200px;
+}
+.collection div:last-child {
+    flex: 1;
+}
+
+.btn {
+    font-size: 1.1rem;
+    background-color: var(--green);
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: filter .2s ease-out;
+    vertical-align: middle;
+    outline: 0;
+    min-width: 15rem;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.btn:focus,
+.btn:hover {
+    filter: brightness(110%) saturate(110%);
+}
+
+.iniciar {
+    background-color: var(--blue)
+}
+
+.close {
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

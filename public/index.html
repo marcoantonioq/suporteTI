@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suporte de TI - Cidade de Goiás</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <!-- <link rel="stylesheet" href="./css/materialize.min.css"> -->
+</head>
+
+<body>
+    <div class="container">
+        
+        <b>
+            Este dispositivo
+        </b>
+        <div class="collection">
+            <div>
+                <i class="large material-icons">help_outline</i>
+            </div>
+            <div>
+                <h4>Receber suporte</h4>
+                <p>
+                    Para permitir que o técnico de TI acesse e controle este computador, descreva o problema e clique no botão solicitar.
+                </p>
+                <textarea placeholder="Descreva o seu chamado..." required></textarea>
+                
+                <button class="btn">
+                    Solicitar
+                </button>
+            </div>
+            
+        </div>
+        
+        
+        <b>
+            Dispositivos remotos
+        </b>
+        <div class="collection">
+            <div>
+                <i class="white-text large material-icons">desktop_windows</i>
+            </div>
+            <div>
+                <h4>Conceder suporte</h4>
+                <p>
+                    Para acessar outro computador remotamente, clique no botão conectar.
+                </p>
+                <button class="btn iniciar">
+                    Conectar
+                </button>
+            </div>
+            
+        </div>
+        
+        
+        <div>
+            <div id="info_system"></div>
+            <div id="networks"></div>
+        </div>
+        
+        <button>
+            <i class="material-icons close">close</i>
+        </button>
+        
+    </div>
+    
+    
+    
+    <script type="module" src="../app/components/index.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
+    
+</body>
+
+</html>

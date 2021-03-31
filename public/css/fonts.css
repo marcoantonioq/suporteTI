@@ -2,7 +2,13 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url("../../static/fonts/Material.woff2") format('woff2');
+    src: url("../fonts/Material.woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  src: url("../fonts/Cantarell.ttf");
 }
 
 .material-icons {
@@ -19,3 +25,4 @@
     direction: ltr;
     -webkit-font-smoothing: antialiased;
 }
+

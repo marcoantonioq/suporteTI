@@ -1,27 +1,26 @@
 {
-    "name": "suporteTI",
-    "version": "0.1.0",
-    "description": "Suporte de TI: Cidade de Goiás",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/marcoantonioq/suporteTI.git"
-    },
-    "scripts": {
-        "start": "./node_modules/.bin/electron .",
-        "build": "./node_modules/.bin/electron-builder -w",
-        "bwin": "./node_modules/.bin/electron-builder -w --win portable",
-        "deploy": "./node_modules/.bin/electron-builder -w --publish always"
-    },
-    "author": "Marco Antônio Queiroz",
-    "license": "ISC",
-    "devDependencies": {
-        "electron": "^9.3.1",
-        "electron-builder": "^22.8.1"
-    },
-    "dependencies": {
-        "electron-log": "^4.2.4",
-        "electron-updater": "^4.3.5",
-        "ip": "^1.1.5"
-    }
+  "name": "suporteTI",
+  "version": "0.1.0",
+  "description": "Suporte de TI: Cidade de Goiás",
+  "main": "electron/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcoantonioq/suporteTI.git"
+  },
+  "scripts": {
+    "build:win": "electron-builder -w",
+    "build:pwin": "electron-builder -w --win portable",
+    "build:lin": "electron-builder -l",
+    "start": "electron ."
+  },
+  "author": "Marco Antônio Queiroz",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.4.4",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {}
 }

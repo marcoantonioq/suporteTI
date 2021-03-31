@@ -1,0 +1,14 @@
+{
+    "window.zoomLevel": 0,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "typescript": "sh -c clear && npx ts-node --files --transpile-only",
+        "*.js": "node",
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll": true
+    },
+    "python.pythonPath": "venv/bin/python",
+    "cSpell.enabled": true
+}
