@@ -1,9 +1,10 @@
+"use strict";
 const { remote, shell, ipcRenderer } = require('electron');
 const settings = require("../../settings.json");
 const { getSolutions } = require("../../solutions.js");
-const { infoSystem } = require("../module/System");
-const { listenerVNC, connectVNC } = require("../module/VNC");
-const { hostsActives } = require("../module/Net");
+const { infoSystem } = require("../../modules/System");
+const { listenerVNC, connectVNC } = require("../../modules/VNC");
+const { hostsActives } = require("../../modules/Net");
 
 /**
  * Objeto app VueJS
@@ -15,6 +16,7 @@ var appVRender = new Vue({
             message: `Olá ${infoSystem.username}! `,
             description: '',
             system: infoSystem,
+            app_version: remote.app.getVersion(),
             servidor_enable: { ip: null, port: null },
             servidores_reachable: [],
         }
@@ -109,23 +111,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var elems = document.querySelectorAll('.tabs');
         var instance = M.Tabs.init(elems, options);
 
-
-        document.getElementById('version').innerText = 'Suporte de TI: ' + remote.app.getVersion();
-
-        const notification = document.getElementById('notification');
         ipcRenderer.on('message', (event, arg) => {
             M.toast({ html: arg })
         });
 
+        const updating = document.getElementById('updating');
+        const btnUpdating = updating.querySelector('button')
+
         ipcRenderer.on('update_available', () => {
             ipcRenderer.removeAllListeners('update_available');
             M.toast({ html: 'Uma nova atualização está disponível. Baixando agora ...' })
-            notification.classList.remove('hidden');
+
+            updating.classList.remove('hidden');
+            btnUpdating.classList.add('disabled')
+            btnUpdating.querySelector('span').innerHTML = 'Baixando...'
         });
         ipcRenderer.on('update_downloaded', () => {
-            ipcRenderer.removeAllListeners('update_downloaded');
+            // ipcRenderer.removeAllListeners('update_downloaded');
             M.toast({ html: 'Atualização baixada. Ele será instalado na reinicialização. Reinicie agora?' })
-            notification.classList.remove('hidden');
+            updating.classList.remove('hidden');
+            btnUpdating.classList.remove('disabled')
+            btnUpdating.querySelector('span').innerHTML = 'Atualizar'
         });
     })();
 });

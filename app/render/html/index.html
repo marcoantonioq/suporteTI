@@ -134,7 +134,7 @@
 
                     <div class="row">
                         <div class="col s12 m8">
-                            <h6 id="version"> </h6>
+                            <h6> Suporte de TI: {{app_version}}</h6>
                             <h6>Computador: {{system.hostname}} / {{system.hostversion}}</h6>
                             <h6>Redes: {{system.networks.toString()}}</h6>
                         </div>
@@ -149,8 +149,8 @@
                 <div class="col s12 m4 valign-wrapper">
                     <button v-on:click.prevent.stop="close" class="col s12 btn red darken-1 right"><i class="material-icons left">close</i>Fechar</button>
                 </div>
-                <div class="notification hhidden col s12 m4">
-                    <button v-on:click.prevent.stop="restartApp" class="col s12 btn darken-1 right"><i class="material-icons left">sync</i>Instalar atualização</button>
+                <div id="updating" class="updating hidden col s12 m4">
+                    <button v-on:click.prevent.stop="restartApp" class="col s12 btn darken-1 right"><i class="material-icons left">sync</i><span>Instalar atualização</span></button>
                 </div>
             </div>
 

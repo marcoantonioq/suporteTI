@@ -1,7 +1,7 @@
 'use strict';;
 const net = require('net');
 const ip = require("ip");
-const { networks } = require("../module/System");
+const { networks } = require('../modules/System');
 const { isString } = require('util');
 
 /**
