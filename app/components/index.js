@@ -1,4 +1,3 @@
-import { openUrl } from './Helpers/Utils.js';
 import { render } from './render.js';
 
 function init() {
@@ -9,11 +8,6 @@ function init() {
 
 init();
 
-const form = document.getElementById('form');
-
-form.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-});
 
 // const _usuario = {
 //   nome: 'Marco Antônio',

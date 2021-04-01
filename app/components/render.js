@@ -1,8 +1,8 @@
 'use strict';
-import { SO } from './System.js';
+import { toHtml as SOtoHtml } from './System.js';
 
 const elements = {
-  info_system: SO.toHtml(),
+  info_system: SOtoHtml(),
 };
 
 export function render(elID) {
@@ -10,6 +10,6 @@ export function render(elID) {
     const el = document.getElementById(elID);
     el.innerHTML = elements[elID];
   } catch (e) {
-    console.log(`Elemento não existe: ${elID}: ${e}`);
+    console.log(`Elemento não encontrado: ${elID}: ${e}`);
   }
 }
