@@ -2,6 +2,9 @@
 
 Aplicativo de gerenciamento de acesso remoto. 
 
+## Refactoring
+[Nova versão: ...tree/refactor](https://github.com/marcoantonioq/suporteTI/tree/refactor)
+
 ## Aplicação:
 Sua principal funcionalidade é fornecer interatividade entre os usuários e o serviço UltraVNC.
 
