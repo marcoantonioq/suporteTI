@@ -20,9 +20,9 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 
 # PrintSC
 
-![image](https://dl.dropboxusercontent.com/s/x6qt42iwvzs5482/SuporteTI.png?dl=0)
+![image](https://raw.githubusercontent.com/marcoantonioq/suporteTI/master/demo/demo.png)
+
 
 # Video demo
 
-[![Demo](https://dl.dropboxusercontent.com/s/b80v0yn950ktp4v/VideoSuporteTI.png?dl=0)](https://youtu.be/UCedJ5JMV1Y)
-
+[<img src="https://raw.githubusercontent.com/marcoantonioq/suporteTI/master/demo/video.png">](https://www.youtube.com/watch?v=UCedJ5JMV1Y)
