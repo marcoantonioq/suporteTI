@@ -21,7 +21,7 @@ Sua principal funcionalidade é fornecer interatividade entre os usuários e o s
 
 # Video demo
 
-[![Demo](https://raw.githubusercontent.com/marcoantonioq/suporteTI/refactor/demo/video.png)
+[<img src="https://raw.githubusercontent.com/marcoantonioq/suporteTI/refactor/demo/video.png">](https://www.youtube.com/watch?v=UCedJ5JMV1Y)
 
 
 
